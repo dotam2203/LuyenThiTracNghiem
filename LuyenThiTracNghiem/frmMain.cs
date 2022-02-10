@@ -38,13 +38,20 @@ namespace LuyenThiTracNghiem
             dangNhap = new ucDangNhap();
             dangNhap.Dock = DockStyle.Fill;
             mainContainer.Controls.Add(dangNhap);
-            controlThiTracNghiem.Visible = false;
+            //controlThiTracNghiem.Visible = false;
         }
         private void controlDangNhap_Click(object sender, EventArgs e)
         {
-            dangNhap = new ucDangNhap();
-            dangNhap.Dock = DockStyle.Fill;
-            mainContainer.Controls.Add(dangNhap);
+            if (dangNhap == null)
+            {
+                dangNhap = new ucDangNhap();
+                dangNhap.Dock = DockStyle.Fill;
+                mainContainer.Controls.Add(dangNhap);
+                dangNhap.BringToFront();//đưa lên trước
+            }
+            else
+                dangNhap.BringToFront();
+            lbTieuDe.Caption = controlDangNhap.Text;
         }
         private void controlCTTK_Click(object sender, EventArgs e)
         {
@@ -161,7 +168,7 @@ namespace LuyenThiTracNghiem
         }
         private void controlDangXuat_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn thật sự muốn Đăng Xuất?", "Cảnh Báo!!!", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Bạn thật sự muốn Đăng Xuất?", "Danger!!!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 frmDangNhap login = new frmDangNhap();

@@ -19,13 +19,19 @@ namespace LuyenThiTracNghiem
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmMain trangChu = new frmMain();
-            trangChu.Show();
+            DialogResult dr = MessageBox.Show("Đăng Nhập Thành Công!", "Sucessfully!", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                frmMain trangChu = new frmMain();
+                trangChu.Show();
+            }
+            else return;
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn thật sự muốn Thoát?", "Cảnh Báo!!!", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Bạn thật sự muốn Thoát?", "Danger!!!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 Application.Exit();

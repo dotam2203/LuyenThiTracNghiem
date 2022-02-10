@@ -82,6 +82,7 @@ namespace LuyenThiTracNghiem
             this.controlGroupTaiKhoan,
             this.controlGroupGiangVien,
             this.controlGroupSinhVien});
+            this.controlThiTracNghiem.Expanded = true;
             this.controlThiTracNghiem.Name = "controlThiTracNghiem";
             this.controlThiTracNghiem.Text = "Thi Trắc Nghiệm";
             // 
